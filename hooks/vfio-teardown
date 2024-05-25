@@ -41,7 +41,7 @@ if grep -q "true" "/tmp/vfio-is-nvidia" ; then
     
     #modprobe drm
     #modprobe drm_kms_helper
-    modprobe i2c_nvidia_gpu
+    #modprobe i2c_nvidia_gpu
     modprobe nvidia
     modprobe nvidia_modeset
     modprobe nvidia_drm

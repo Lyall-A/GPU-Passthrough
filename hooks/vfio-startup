@@ -149,8 +149,8 @@ if lspci -nn | grep -e VGA | grep -s AMD ; then
 fi
 
 ## Load VFIO-PCI driver ##
-#modprobe vfio
+modprobe vfio
 modprobe vfio_pci
-#modprobe vfio_iommu_type1
+modprobe vfio_iommu_type1
 
 echo "$DATE End of Startup!"

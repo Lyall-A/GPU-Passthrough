@@ -31,8 +31,8 @@ echo "$DATE Beginning of Teardown!"
 
 ## Unload VFIO-PCI driver ##
 modprobe -r vfio_pci
-#modprobe -r vfio_iommu_type1
-#modprobe -r vfio
+modprobe -r vfio_iommu_type1
+modprobe -r vfio
 
 if grep -q "true" "/tmp/vfio-is-nvidia" ; then
 

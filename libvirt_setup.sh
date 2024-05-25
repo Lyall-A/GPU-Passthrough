@@ -31,8 +31,8 @@ sleep 1s
 clear
 
 echo "Replacing configs..."
-mv libvirtd_custom.conf /etc/libvirt/libvirt.conf
-mv qemu_custom.conf /etc/libvirt/qemu.conf
+mv libvirtd.conf /etc/libvirt
+mv qemu.conf /etc/libvirt
 sleep 1s
 clear
 

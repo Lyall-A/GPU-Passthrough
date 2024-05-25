@@ -31,17 +31,17 @@ echo "$DATE Beginning of Teardown!"
 
 ## Unload VFIO-PCI driver ##
 modprobe -r vfio_pci
-modprobe -r vfio_iommu_type1
-modprobe -r vfio
+#modprobe -r vfio_iommu_type1
+#modprobe -r vfio
 
 if grep -q "true" "/tmp/vfio-is-nvidia" ; then
 
     ## Load NVIDIA drivers ##
     echo "$DATE Loading NVIDIA GPU Drivers"
     
-    modprobe drm
-    modprobe drm_kms_helper
-    modprobe i2c_nvidia_gpu
+    #modprobe drm
+    #modprobe drm_kms_helper
+    #modprobe i2c_nvidia_gpu
     modprobe nvidia
     modprobe nvidia_modeset
     modprobe nvidia_drm
@@ -55,10 +55,10 @@ if  grep -q "true" "/tmp/vfio-is-amd" ; then
     ## Load NVIDIA drivers ##
     echo "$DATE Loading AMD GPU Drivers"
     
-    modprobe drm
+    #modprobe drm
     modprobe amdgpu
-    modprobe radeon
-    modprobe drm_kms_helper
+    #modprobe radeon
+    #modprobe drm_kms_helper
     
     echo "$DATE AMD GPU Drivers Loaded"
 fi

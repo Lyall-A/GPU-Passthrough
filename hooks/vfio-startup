@@ -127,8 +127,8 @@ if lspci -nn | grep -e VGA | grep -s NVIDIA ; then
     modprobe -r nvidia_drm
     modprobe -r nvidia_modeset
     modprobe -r nvidia
-    #modprobe -r drm_kms_helper
-    #modprobe -r drm
+    modprobe -r drm_kms_helper
+    modprobe -r drm
 
     echo "$DATE NVIDIA GPU Drivers Unloaded"
 fi
@@ -139,10 +139,10 @@ if lspci -nn | grep -e VGA | grep -s AMD ; then
     echo efi-framebuffer.0 > /sys/bus/platform/drivers/efi-framebuffer/unbind
 
     ## Unload AMD GPU drivers ##
-    #modprobe -r drm_kms_helper
+    modprobe -r drm_kms_helper
     modprobe -r amdgpu
-    #modprobe -r radeon
-    #modprobe -r drm
+    modprobe -r radeon
+    modprobe -r drm
 
     echo "$DATE AMD GPU Drivers Unloaded"
 fi

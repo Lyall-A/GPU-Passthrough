@@ -3,6 +3,7 @@ if [ $EUID -ne 0 ]
 		echo "This program must run as root to function." 
 		exit 1
 fi
+
 sleep 1s
 
 echo "Installing all packages..."
@@ -16,11 +17,14 @@ systemctl start libvirtd
 sleep 1s
 clear
 
-echo "Enter a username to add to kvm and libvirt groups"
+echo "Enter the username to get added to the kvm and libvirt groups"
 read USERNAME
+sleep 1s
 clear
-gpasswd -M $USERNAME kvm
-gpasswd -M $USERNAME libvirt
+
+echo "Adding user $USERNAME to groups"
+usermod -a -G kvm $USERNAME
+usermod -a -G libvirt $USERNAME
 sleep 1s
 clear
 

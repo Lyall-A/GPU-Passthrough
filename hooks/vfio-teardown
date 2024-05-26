@@ -39,9 +39,9 @@ if grep -q "true" "/tmp/vfio-is-nvidia" ; then
     ## Load NVIDIA drivers ##
     echo "$DATE Loading NVIDIA GPU Drivers"
     
-    #modprobe drm
-    #modprobe drm_kms_helper
-    #modprobe i2c_nvidia_gpu
+    modprobe drm
+    modprobe drm_kms_helper
+    modprobe i2c_nvidia_gpu
     modprobe nvidia
     modprobe nvidia_modeset
     modprobe nvidia_drm
@@ -55,10 +55,10 @@ if  grep -q "true" "/tmp/vfio-is-amd" ; then
     ## Load NVIDIA drivers ##
     echo "$DATE Loading AMD GPU Drivers"
     
-    #modprobe drm
+    modprobe drm
     modprobe amdgpu
     modprobe radeon
-    #modprobe drm_kms_helper
+    modprobe drm_kms_helper
     
     echo "$DATE AMD GPU Drivers Loaded"
 fi

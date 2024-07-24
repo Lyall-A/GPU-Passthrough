@@ -15,4 +15,3 @@ clear
 echo "Making GRUB config..."
 grub-mkconfig -o /boot/grub/grub.cfg
 sleep 5
-exit
